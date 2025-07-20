@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify
-from app.models import Category, Product
+from models import Category, Product
 from app import db
 
 category_bp = Blueprint("category_bp", __name__, url_prefix="/api")
