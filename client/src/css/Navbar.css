@@ -1,0 +1,123 @@
+/* Reset default spacing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar {
+  background-color: transparent;
+  color: white;
+  position: absolute; /* better than sticky for hero overlays */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.navbar-logo a {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/* Search Bar */
+.navbar-search {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  max-width: 500px;
+  margin: 10px;
+}
+
+.navbar-search input {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  color: black;
+}
+
+.navbar-search button {
+  background-color: #C0C0C0; /* silver */
+  padding: 8px 12px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+/* Icons Section */
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: red;
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .navbar-search {
+    order: 3;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar-icons {
+    gap: 10px;
+  }
+
+  .icon-button.mic {
+    display: none;
+  }
+}
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* subtle glass tint */
+  z-index: -1;
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
